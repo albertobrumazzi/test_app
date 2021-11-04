@@ -1,0 +1,17 @@
+<div class="card border-dark mb-3 w-100" style="background-color: #FFFFCA">
+  <div class="card-header bg-transparent border-dark text-center py-1"> <h5><%= note.title %></h5></div>
+  <div class="card-body pt-0">
+    <div class="card-text mb-2 text-end fw-bold"><%= l note.date, format: :single %></div>
+    <div class="card-text" style="height: 5rem;"><h6><%= note.description %></h6></div>
+    <div class="card-text mt-4 text-start text-secondary"> Prioridade: [<%= note.priority_to_s%>]</div>
+    <div class="card-header bg-transparent border-dark mb-3"></div>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= link_to 'Editar', edit_note_path(note), remote: true, class: "btn btn-primary w-100 fw-bold text-white" %></td>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'Excluir', note, method: :delete, data: { confirm: 'Deseja excluir esta nota?' }, class: "btn btn-danger w-100 fw-bold text-white" %></td>
+      </div>
+    </div>
+  </div>
+</div>

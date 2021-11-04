@@ -1,0 +1,17 @@
+<div class="row justify-content-sm-center w-100">
+  <div class="col-sm-11 mx-1 px-1">
+    <%= simple_form_for(@note, remote: true) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs text-start">
+        <%= f.input :title, input_html: { class: "form-control mb-3", maxlength: 25} %>
+        <%= f.input :description, input_html: { class: "form-control mb-3",  maxlength: 150 } %>
+        <%= f.input :date, as: :date, input_html: { class: "mb-3", style: "width: 32%; border: solid 1px #DDD;" } %>
+        <%= f.input :priority, collection: Note.priority_to_a, allow_blank: false, prompt: false, input_html: { class: "form-control mb-3" } %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Salvar Nota", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

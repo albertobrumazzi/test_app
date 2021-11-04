@@ -1,0 +1,7 @@
+pt-BR:
+  model:
+    note:
+      priority_enum:
+        low: Baixa
+        medium: Média
+        high: Alta
